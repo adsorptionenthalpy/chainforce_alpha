@@ -1,0 +1,726 @@
+[gd_scene load_steps=9 format=3 uid="uid://rygldequiy7x"]
+
+[ext_resource type="PackedScene" uid="uid://bk1dcyxlealda" path="res://Scenes/Player/player.tscn" id="1_sjerm"]
+[ext_resource type="PackedScene" uid="uid://b5md3lc67yau2" path="res://Scenes/GUI/gui.tscn" id="3_55fjw"]
+[ext_resource type="PackedScene" uid="uid://djjoakwp0eej" path="res://Scenes/Enemy/enemy_ship.tscn" id="3_l1yaf"]
+
+[sub_resource type="Environment" id="Environment_fpy8y"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 0.8
+glow_bloom = 0.8
+glow_blend_mode = 0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_b4op2"]
+vertices = PackedVector2Array(-2903, -3235, -1679, -3235, -1158, -2117, -3648, -2117, -4760, -3229, -3648, -8851, -1158, -8851, -1679, -7733, -2903, -7733, -4760, -7739, 3648, -2117, 1158, -2117, 1679, -3235, 2903, -3235, 4760, -3229, 2903, -7733, 1679, -7733, 1158, -8851, 3648, -8851, 4761, -7738, 4760, -5716, 4761, -5716, 937, -5656, 0, -4316, -937, -5656, 0, -6594, 2428, -7258, 2428, -3710, 1580, -5746, 1303, -7258, 5317, -3115, 6634, -5209, 6634, -1872, 5523, -761, 299, -3916, 1303, -3710, 349, -3881, 1403, -5860, 11, -7255, 5235, -3195, 5235, -5253, 5236, -5253, 5235, -3033, 5236, -2916, 6634, -5760, 6661, -5760, 6662, -5209, 6634, -9096, 5236, -8053, 5523, -10207, -6672, -5208, -6673, -5760, -6634, -5760, -6634, -5208, -1580, -5746, -299, -3916, -349, -3881, -1303, -3710, -2428, -3710, -2428, -7258, 0, -7244, -11, -7255, -1303, -7417, -475, -9194, 477, -9189, 1303, -7417, -1303, -7258, -1403, -5860, 5118, -2916, 3844, -1642, 2118, -761, 1992, -887, 5116, -8053, 3844, -9326, 1921, -10207, 564, -9326, -1848, -10330, -1042, -11728, 1043, -11728, -1882, -10207, -481, -1786, -1303, -3550, -209, -3787, -76, -3597, 76, -3597, 209, -3787, 1303, -3550, 481, -1786, 564, -1642, 1919, -761, 1836, -761, 564, -9228, -563, -9326, -1939, -10174, -1920, -10207, -563, -9230, 0, -3647, -564, -1642, -564, -1744, 564, -1744, 1836, -616, 1042, 760, -1043, 760, -1921, -761, -3844, -1642, -5523, -761, -5118, -2916, -6634, -1872, -5236, -2916, -5317, -3115, -2061, -10207, -3679, -9326, -3761, -9409, -5523, -10207, -3844, -9326, -3960, -9326, -6634, -9096, -3960, -9210, -5118, -8052, -5235, -8052, -5317, -7853, -5235, -7771, -5235, -3195, -5235, -3033, -5235, -7935)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(0, 4, 9, 8), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19), PackedInt32Array(20, 14, 13, 15), PackedInt32Array(20, 15, 19, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(34, 28, 27, 35, 36), PackedInt32Array(29, 28, 37, 38), PackedInt32Array(31, 30, 39, 40, 41), PackedInt32Array(42, 30, 33, 43), PackedInt32Array(44, 45, 46, 31, 41), PackedInt32Array(47, 44, 41, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(57, 58, 59, 54), PackedInt32Array(38, 60, 61), PackedInt32Array(62, 63, 64, 65, 29, 38, 61, 66), PackedInt32Array(59, 66, 61, 67, 54), PackedInt32Array(68, 43, 33, 69), PackedInt32Array(69, 33, 70, 71), PackedInt32Array(49, 48, 72, 73), PackedInt32Array(74, 49, 73, 75), PackedInt32Array(76, 77, 78, 74, 75, 79), PackedInt32Array(80, 81, 57, 56, 82, 83), PackedInt32Array(84, 85, 36, 35, 86, 87, 80), PackedInt32Array(88, 69, 71), PackedInt32Array(88, 71, 89, 90), PackedInt32Array(79, 75, 91, 64, 92, 93, 94), PackedInt32Array(63, 95, 92, 64), PackedInt32Array(83, 96, 84, 80), PackedInt32Array(88, 97, 98, 80, 87, 99), PackedInt32Array(88, 90, 100, 101, 102, 103, 97), PackedInt32Array(104, 97, 103, 105), PackedInt32Array(106, 104, 105, 107, 108), PackedInt32Array(108, 107, 53, 109), PackedInt32Array(110, 93, 92, 111, 112), PackedInt32Array(113, 110, 112), PackedInt32Array(113, 112, 114, 115), PackedInt32Array(116, 113, 115, 117, 118, 119), PackedInt32Array(52, 116, 119, 120), PackedInt32Array(120, 121, 122, 109, 53, 52), PackedInt32Array(109, 123, 108), PackedInt32Array(120, 119, 124)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2080, -10451, -1168, -11969, 1170, -11991, 2047, -10473, 5610, -10458, 6858, -9225, 6865, -1792, 5610, -509, 2061, -537, 1191, 988, -1175, 1009, -2044, -537, -5636, -516, -6869, -1777, -6877, -9225, -5622, -10458)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 200.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1usk"]
+size = Vector2(400, 50)
+
+[sub_resource type="Gradient" id="Gradient_2ivi6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_obe5s"]
+gradient = SubResource("Gradient_2ivi6")
+width = 400
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_sjerm")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.4, 0.4)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fpy8y")
+
+[node name="GUI" parent="." instance=ExtResource("3_55fjw")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_b4op2")
+
+[node name="Whole Map" type="Node2D" parent="NavigationRegion2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Bottom Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
+z_index = 5
+
+[node name="Home Base" type="Node2D" parent="NavigationRegion2D/Whole Map/Bottom Map"]
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base"]
+position = Vector2(0, 665)
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base"]
+position = Vector2(1078, 158)
+rotation = -1.0472
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base"]
+position = Vector2(-1079, 158)
+rotation = 1.0472
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Home Base/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Left Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Bottom Map"]
+position = Vector2(-801, 0)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-1756, -349)
+scale = Vector2(6, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-3363, -766)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-2113, -1670)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-2531, -2877)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-1106, -1253)
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane"]
+position = Vector2(-3780, -2573)
+rotation = 1.5708
+scale = Vector2(7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Left Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Right Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Bottom Map"]
+position = Vector2(801, 0)
+scale = Vector2(-1, 1)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-1756, -349)
+scale = Vector2(6, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-3363, -766)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-2113, -1670)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-2531, -2877)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-1106, -1253)
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane"]
+position = Vector2(-3780, -2573)
+rotation = 1.5708
+scale = Vector2(7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Right Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Top Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Bottom Map"]
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(-909, -1253)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(-772, -1785)
+rotation = 1.13446
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(772, -1785)
+rotation = 2.00713
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(1402, -2315)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(-1402, -2315)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall7" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(-1777, -3129)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall7"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall7"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall8" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(1777, -3129)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall8"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall8"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane"]
+position = Vector2(909, -1253)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Bottom Map/Top Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Top Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
+z_index = 5
+position = Vector2(0, -7312)
+rotation = 3.14159
+
+[node name="Home Base" type="Node2D" parent="NavigationRegion2D/Whole Map/Top Map"]
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base"]
+position = Vector2(0, 665)
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base"]
+position = Vector2(1078, 158)
+rotation = -1.0472
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base"]
+position = Vector2(-1079, 158)
+rotation = 1.0472
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Home Base/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Left Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Top Map"]
+position = Vector2(-801, 0)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-1756, -349)
+scale = Vector2(6, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-3363, -766)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-2113, -1670)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-2531, -2877)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-1106, -1253)
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane"]
+position = Vector2(-3780, -2573)
+rotation = 1.5708
+scale = Vector2(7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Left Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Right Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Top Map"]
+position = Vector2(801, 0)
+scale = Vector2(-1, 1)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-1756, -349)
+scale = Vector2(6, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-3363, -766)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-2113, -1670)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-2531, -2877)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-1106, -1253)
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane"]
+position = Vector2(-3780, -2573)
+rotation = 1.5708
+scale = Vector2(7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Right Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Top Lane" type="Node2D" parent="NavigationRegion2D/Whole Map/Top Map"]
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(-909, -1253)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall3" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(-772, -1785)
+rotation = 1.13446
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall3"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall3"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall4" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(772, -1785)
+rotation = 2.00713
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall4"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall4"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall5" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(1402, -2315)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall5"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall5"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall6" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(-1402, -2315)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall6"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall6"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall7" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(-1777, -3129)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall7"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall7"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall8" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(1777, -3129)
+rotation = 1.5708
+scale = Vector2(4, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall8"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall8"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane"]
+position = Vector2(909, -1253)
+scale = Vector2(2, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Top Map/Top Lane/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Middle Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
+position = Vector2(-30, -40)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Middle Map"]
+position = Vector2(444, -4166)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Middle Map/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Middle Map/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Middle Map"]
+position = Vector2(450, -3162)
+rotation = -0.959931
+scale = Vector2(3.7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Middle Map/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Middle Map/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Middle Map2" type="Node2D" parent="NavigationRegion2D/Whole Map"]
+position = Vector2(30, -40)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Middle Map2"]
+position = Vector2(444, -4166)
+rotation = 0.785398
+scale = Vector2(3, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Middle Map2/Wall"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Middle Map2/Wall"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D/Whole Map/Middle Map2"]
+position = Vector2(450, -3162)
+rotation = -0.959931
+scale = Vector2(3.7, 1)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Whole Map/Middle Map2/Wall2"]
+shape = SubResource("RectangleShape2D_w1usk")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Whole Map/Middle Map2/Wall2"]
+scale = Vector2(1, 50)
+texture = SubResource("GradientTexture1D_obe5s")
+
+[node name="EnemyShip" parent="." instance=ExtResource("3_l1yaf")]
+position = Vector2(1151, -788)
+
+[node name="EnemyShip2" parent="." instance=ExtResource("3_l1yaf")]
+position = Vector2(-1199, -1026)
