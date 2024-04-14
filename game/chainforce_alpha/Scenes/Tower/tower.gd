@@ -11,6 +11,7 @@ extends StaticBody2D
 			die()
 
 @onready var projectile_shooter: EnemyProjectileShooter = $ProjectileShooter
+@onready var detection_area: Area2D = $DetectionArea
 
 var enemy_target: Node2D
 var is_dead: bool
@@ -42,3 +43,20 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("friendly") or body.is_in_group("enemy"):
 		enemy_target = body
 		projectile_shooter.can_shoot = true
+
+func choose_next_target():
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var next_target: Node2D
+	for body: Node2D in detection_area.get_overlapping_bodies():
+		if next_target == null:
+			next_target = body
+		else:
+			var distance_to_body: float = body.global_position.distance_squared_to(global_position)
+			var distance_to_target: float = next_target.global_position.distance_squared_to(global_position)
+			if distance_to_body < distance_to_target:
+				next_target = body
+	
+	if next_target == null:
+		enemy_target = null
+		projectile_shooter.can_shoot = false

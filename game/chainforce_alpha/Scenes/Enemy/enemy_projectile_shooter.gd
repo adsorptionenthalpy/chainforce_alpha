@@ -30,7 +30,8 @@ func shoot_projectile() -> void:
 		projectile.set_collision_layer_value(3, true)
 		projectile.set_collision_mask_value(2, true)
 		projectile.set_collision_mask_value(3, false)
-	enemy_ship.add_sibling(projectile)
+	
+	add_sibling(projectile)
 
 func _on_timer_timeout() -> void:
 	if enemy_ship.enemy_target != null:

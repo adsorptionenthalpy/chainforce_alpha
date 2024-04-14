@@ -15,6 +15,7 @@ class_name EnemyShip
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var projectile_shooter: EnemyProjectileShooter = $ProjectileShooter
+@onready var detection_area: Area2D = $DetectionArea
 
 var enemy_target: Node2D
 var is_dead: bool
@@ -58,6 +59,26 @@ func die():
 	await get_tree().create_timer(2).timeout
 	queue_free()
 
+func choose_next_target():
+	# Give the target time to disable collision
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var next_target: Node2D
+	for body: Node2D in detection_area.get_overlapping_bodies():
+		print(body.name)
+		if next_target == null:
+			next_target = body
+		else:
+			var distance_to_body: float = body.global_position.distance_squared_to(global_position)
+			var distance_to_target: float = next_target.global_position.distance_squared_to(global_position)
+			if distance_to_body < distance_to_target:
+				next_target = body
+	
+	if next_target == null:
+		enemy_target = null
+		projectile_shooter.can_shoot = false
+
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if enemy_target == null and body.is_in_group("friendly"):
 		enemy_target = body
+

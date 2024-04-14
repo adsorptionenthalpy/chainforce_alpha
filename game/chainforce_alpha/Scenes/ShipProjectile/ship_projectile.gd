@@ -30,3 +30,5 @@ func _on_body_entered(body: Node2D) -> void:
 	destroy_projectile()
 	if body.is_in_group("enemy") or body.is_in_group("friendly"):
 		body.hp -= damage
+		if body.hp <= 0:
+			get_parent().choose_next_target()
