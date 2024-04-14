@@ -33,7 +33,9 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 func chase_target(delta: float):
-	if enemy_target == null:
+	if enemy_target == null or enemy_target.hp <= 0:
+		# TODO check performance of this
+		choose_next_target()
 		return
 	
 	var target_rotation: float = global_position.angle_to_point(enemy_target.global_position) + PI/2
@@ -64,13 +66,11 @@ func die():
 	queue_free()
 
 func choose_next_target():
-	# Give the target time to disable collision
 	await get_tree().process_frame
 	await get_tree().process_frame
 	var next_target: Node2D
 	for body: Node2D in detection_area.get_overlapping_bodies():
-		print(body.name)
-		if next_target == null:
+		if next_target == null or next_target.hp <= 0:
 			next_target = body
 		else:
 			var distance_to_body: float = body.global_position.distance_squared_to(global_position)
@@ -81,6 +81,8 @@ func choose_next_target():
 	if next_target == null:
 		enemy_target = null
 		projectile_shooter.can_shoot = false
+	else:
+		enemy_target = next_target
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if enemy_target == null and (body.is_in_group("friendly") or body.is_in_group("enemy")):

@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	shoot_enemy(delta)
 
 func shoot_enemy(delta: float):
-	if enemy_target == null:
+	if enemy_target == null or enemy_target.hp <= 0:
 		return
 	
 	var target_rotation: float = global_position.angle_to_point(enemy_target.global_position) #+ PI/2
@@ -49,7 +49,7 @@ func choose_next_target():
 	await get_tree().process_frame
 	var next_target: Node2D
 	for body: Node2D in detection_area.get_overlapping_bodies():
-		if next_target == null:
+		if next_target == null or next_target.hp <= 0:
 			next_target = body
 		else:
 			var distance_to_body: float = body.global_position.distance_squared_to(global_position)
@@ -60,3 +60,5 @@ func choose_next_target():
 	if next_target == null:
 		enemy_target = null
 		projectile_shooter.can_shoot = false
+	else:
+		enemy_target = next_target

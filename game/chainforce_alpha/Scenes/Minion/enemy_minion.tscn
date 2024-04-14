@@ -2,4 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://cvi7dft6wrew" path="res://Scenes/Minion/minion.tscn" id="1_1cvbi"]
 
-[node name="Minion" groups=["enemy"] instance=ExtResource("1_1cvbi")]
+[node name="EnemyMinion" groups=["enemy"] instance=ExtResource("1_1cvbi")]
