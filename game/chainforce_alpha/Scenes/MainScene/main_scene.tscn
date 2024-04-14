@@ -14,8 +14,6 @@ glow_bloom = 0.8
 glow_blend_mode = 0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_b4op2"]
-vertices = PackedVector2Array(-2903, -3235, -1679, -3235, -1158, -2117, -3648, -2117, -4760, -3229, -3648, -8851, -1158, -8851, -1679, -7733, -2903, -7733, -4760, -7739, 3648, -2117, 1158, -2117, 1679, -3235, 2903, -3235, 4760, -3229, 2903, -7733, 1679, -7733, 1158, -8851, 3648, -8851, 4761, -7738, 4760, -5716, 4761, -5716, 937, -5656, 0, -4316, -937, -5656, 0, -6594, 2428, -7258, 2428, -3710, 1580, -5746, 1303, -7258, 5317, -3115, 6634, -5209, 6634, -1872, 5523, -761, 299, -3916, 1303, -3710, 349, -3881, 1403, -5860, 11, -7255, 5235, -3195, 5235, -5253, 5236, -5253, 5235, -3033, 5236, -2916, 6634, -5760, 6661, -5760, 6662, -5209, 6634, -9096, 5236, -8053, 5523, -10207, -6672, -5208, -6673, -5760, -6634, -5760, -6634, -5208, -1580, -5746, -299, -3916, -349, -3881, -1303, -3710, -2428, -3710, -2428, -7258, 0, -7244, -11, -7255, -1303, -7417, -475, -9194, 477, -9189, 1303, -7417, -1303, -7258, -1403, -5860, 5118, -2916, 3844, -1642, 2118, -761, 1992, -887, 5116, -8053, 3844, -9326, 1921, -10207, 564, -9326, -1848, -10330, -1042, -11728, 1043, -11728, -1882, -10207, -481, -1786, -1303, -3550, -209, -3787, -76, -3597, 76, -3597, 209, -3787, 1303, -3550, 481, -1786, 564, -1642, 1919, -761, 1836, -761, 564, -9228, -563, -9326, -1939, -10174, -1920, -10207, -563, -9230, 0, -3647, -564, -1642, -564, -1744, 564, -1744, 1836, -616, 1042, 760, -1043, 760, -1921, -761, -3844, -1642, -5523, -761, -5118, -2916, -6634, -1872, -5236, -2916, -5317, -3115, -2061, -10207, -3679, -9326, -3761, -9409, -5523, -10207, -3844, -9326, -3960, -9326, -6634, -9096, -3960, -9210, -5118, -8052, -5235, -8052, -5317, -7853, -5235, -7771, -5235, -3195, -5235, -3033, -5235, -7935)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(0, 4, 9, 8), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19), PackedInt32Array(20, 14, 13, 15), PackedInt32Array(20, 15, 19, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(34, 28, 27, 35, 36), PackedInt32Array(29, 28, 37, 38), PackedInt32Array(31, 30, 39, 40, 41), PackedInt32Array(42, 30, 33, 43), PackedInt32Array(44, 45, 46, 31, 41), PackedInt32Array(47, 44, 41, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(57, 58, 59, 54), PackedInt32Array(38, 60, 61), PackedInt32Array(62, 63, 64, 65, 29, 38, 61, 66), PackedInt32Array(59, 66, 61, 67, 54), PackedInt32Array(68, 43, 33, 69), PackedInt32Array(69, 33, 70, 71), PackedInt32Array(49, 48, 72, 73), PackedInt32Array(74, 49, 73, 75), PackedInt32Array(76, 77, 78, 74, 75, 79), PackedInt32Array(80, 81, 57, 56, 82, 83), PackedInt32Array(84, 85, 36, 35, 86, 87, 80), PackedInt32Array(88, 69, 71), PackedInt32Array(88, 71, 89, 90), PackedInt32Array(79, 75, 91, 64, 92, 93, 94), PackedInt32Array(63, 95, 92, 64), PackedInt32Array(83, 96, 84, 80), PackedInt32Array(88, 97, 98, 80, 87, 99), PackedInt32Array(88, 90, 100, 101, 102, 103, 97), PackedInt32Array(104, 97, 103, 105), PackedInt32Array(106, 104, 105, 107, 108), PackedInt32Array(108, 107, 53, 109), PackedInt32Array(110, 93, 92, 111, 112), PackedInt32Array(113, 110, 112), PackedInt32Array(113, 112, 114, 115), PackedInt32Array(116, 113, 115, 117, 118, 119), PackedInt32Array(52, 116, 119, 120), PackedInt32Array(120, 121, 122, 109, 53, 52), PackedInt32Array(109, 123, 108), PackedInt32Array(120, 119, 124)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2080, -10451, -1168, -11969, 1170, -11991, 2047, -10473, 5610, -10458, 6858, -9225, 6865, -1792, 5610, -509, 2061, -537, 1191, 988, -1175, 1009, -2044, -537, -5636, -516, -6869, -1777, -6877, -9225, -5622, -10458)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 200.0
@@ -722,14 +720,56 @@ shape = SubResource("RectangleShape2D_w1usk")
 scale = Vector2(1, 50)
 texture = SubResource("GradientTexture1D_obe5s")
 
+[node name="Friendly Towers" type="Node2D" parent="NavigationRegion2D"]
+
+[node name="FriendlyTower" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(-800, -650)
+
+[node name="FriendlyTower2" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(800, -650)
+
+[node name="FriendlyTower4" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(5000, -1500)
+
+[node name="FriendlyTower6" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(-5000, -1500)
+
+[node name="FriendlyTower5" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(5900, -4300)
+
+[node name="FriendlyTower7" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(-5900, -4300)
+
+[node name="FriendlyTower8" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+position = Vector2(0, -3000)
+
+[node name="Enemy Towers" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(0, -10941)
+rotation = 3.14159
+
+[node name="EnemyTower" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(-800, -650)
+
+[node name="EnemyTower2" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(800, -650)
+
+[node name="EnemyTower3" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(5000, -1500)
+
+[node name="EnemyTower4" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(-5000, -1500)
+
+[node name="EnemyTower5" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(5900, -4300)
+
+[node name="EnemyTower6" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(-5900, -4300)
+
+[node name="EnemyTower7" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
+position = Vector2(0, -3000)
+
 [node name="EnemyShip" parent="." instance=ExtResource("3_l1yaf")]
-position = Vector2(1151, -788)
+position = Vector2(1117, -1059)
 
 [node name="EnemyShip2" parent="." instance=ExtResource("3_l1yaf")]
-position = Vector2(-1199, -1026)
-
-[node name="Tower" parent="." instance=ExtResource("4_fx6js")]
-position = Vector2(-71, -3157)
-
-[node name="Tower2" parent="." instance=ExtResource("5_4dpdk")]
-position = Vector2(-141, 535)
+position = Vector2(-1233, -1297)
