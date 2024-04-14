@@ -36,6 +36,7 @@ width = 400
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
+position = Vector2(1137, -308)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.35, 0.35)
@@ -732,19 +733,19 @@ position = Vector2(-800, -650)
 [node name="FriendlyTower2" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(800, -650)
 
-[node name="FriendlyTower4" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+[node name="FriendlyTower3" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(5000, -1500)
 
-[node name="FriendlyTower6" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+[node name="FriendlyTower4" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(-5000, -1500)
 
 [node name="FriendlyTower5" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(5900, -4300)
 
-[node name="FriendlyTower7" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+[node name="FriendlyTower6" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(-5900, -4300)
 
-[node name="FriendlyTower8" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
+[node name="FriendlyTower7" parent="NavigationRegion2D/Friendly Towers" instance=ExtResource("5_4dpdk")]
 position = Vector2(0, -3000)
 
 [node name="Enemy Towers" type="Node2D" parent="NavigationRegion2D"]
@@ -778,30 +779,32 @@ position = Vector2(1117, -1059)
 [node name="EnemyShip2" parent="." instance=ExtResource("3_l1yaf")]
 position = Vector2(-1233, -1297)
 
-[node name="Minion" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(490, 618)
-hp = 5
+[node name="EnemyMinion" parent="." instance=ExtResource("6_t66da")]
+position = Vector2(-722, 724)
 
-[node name="Minion2" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(-141, 625)
-hp = 5
+[node name="EnemyMinion2" parent="." instance=ExtResource("6_t66da")]
+position = Vector2(-52, 511)
 
-[node name="Minion3" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(-779, 660)
-hp = 5
+[node name="EnemyMinion3" parent="." instance=ExtResource("6_t66da")]
+position = Vector2(685, 701)
 
-[node name="Minion4" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(204, 303)
-hp = 8
+[node name="EnemyMinion4" parent="." instance=ExtResource("6_t66da")]
+position = Vector2(199, 333)
 
-[node name="Minion5" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(-740, 388)
-hp = 8
+[node name="EnemyMinion5" parent="." instance=ExtResource("6_t66da")]
+position = Vector2(-557, -96)
 
-[node name="Minion6" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(-939, 388)
-hp = 8
+[node name="FriendlyMinion" parent="." instance=ExtResource("7_pplfq")]
+position = Vector2(-717, 378)
 
-[node name="Minion7" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(-202, 356)
-hp = 8
+[node name="FriendlyMinion2" parent="." instance=ExtResource("7_pplfq")]
+position = Vector2(-244, 178)
+
+[node name="FriendlyMinion3" parent="." instance=ExtResource("7_pplfq")]
+position = Vector2(438, 346)
+
+[node name="FriendlyMinion4" parent="." instance=ExtResource("7_pplfq")]
+position = Vector2(-488, 569)
+
+[node name="FriendlyMinion5" parent="." instance=ExtResource("7_pplfq")]
+position = Vector2(194, 737)

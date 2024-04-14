@@ -27,7 +27,7 @@ scale_max = 0.2
 scale_curve = SubResource("CurveTexture_25v7c")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4kp6"]
-radius = 500.0
+radius = 700.0
 
 [node name="Minion" type="CharacterBody2D" groups=["minion"]]
 collision_layer = 4
@@ -68,6 +68,8 @@ shape = SubResource("CircleShape2D_b4kp6")
 position = Vector2(0, -14)
 script = ExtResource("4_ddss5")
 projectile_scene = ExtResource("5_jvcln")
+pitch_scale_min = 1.2
+pitch_scale_max = 1.4
 
 [node name="Timer" type="Timer" parent="ProjectileShooter"]
 wait_time = 0.5
@@ -76,7 +78,7 @@ autostart = true
 [node name="ShootSFX" type="AudioStreamPlayer2D" parent="ProjectileShooter"]
 position = Vector2(0, 32)
 stream = ExtResource("6_ab710")
-volume_db = -10.0
+volume_db = -15.0
 max_polyphony = 2
 bus = &"SFX"
 
