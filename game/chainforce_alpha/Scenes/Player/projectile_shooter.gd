@@ -19,7 +19,7 @@ func shoot_projectile() -> void:
 	var projectile: ShipProjectile = projectile_scene.instantiate()
 	projectile.global_rotation = global_rotation
 	projectile.global_position = global_position
-	$"..".add_sibling(projectile)
+	add_sibling(projectile)
 	
 	shoot_sfx.pitch_scale = randf_range(0.8, 1)
 	shoot_sfx.play()
