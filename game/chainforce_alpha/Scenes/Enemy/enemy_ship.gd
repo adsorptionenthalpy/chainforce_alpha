@@ -4,6 +4,8 @@ class_name EnemyShip
 @export var hp: int = 10 :
 	set(val):
 		hp = val
+		if !is_inside_tree():
+			return
 		var tween: Tween = create_tween()
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property(self, "modulate", Color.WHITE, 0.5).from(Color(1.3, 1.3, 1.3))
@@ -12,6 +14,8 @@ class_name EnemyShip
 
 @export var speed: float = 450
 @export var rotation_speed: float = 5
+@export var stop_distance: float = 500
+@export var shoot_distance: float = 800
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var projectile_shooter: EnemyProjectileShooter = $ProjectileShooter
@@ -37,14 +41,14 @@ func chase_target(delta: float):
 	
 	nav_agent.target_position = enemy_target.global_position
 	
-	if nav_agent.distance_to_target() > 500:
+	if nav_agent.distance_to_target() > stop_distance:
 		var direction: Vector2 = nav_agent.get_next_path_position() - global_position
 		direction = direction.normalized()
 		velocity = velocity.lerp(direction * speed, delta * 5)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, delta * 500)
+		velocity = velocity.move_toward(Vector2.ZERO, delta * stop_distance)
 	
-	if nav_agent.distance_to_target() < 800:
+	if nav_agent.distance_to_target() < shoot_distance:
 		projectile_shooter.can_shoot = true
 	else:
 		projectile_shooter.can_shoot = false
@@ -79,6 +83,6 @@ func choose_next_target():
 		projectile_shooter.can_shoot = false
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	if enemy_target == null and body.is_in_group("friendly"):
+	if enemy_target == null and (body.is_in_group("friendly") or body.is_in_group("enemy")):
 		enemy_target = body
 
