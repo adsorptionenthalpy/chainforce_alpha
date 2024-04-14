@@ -6,6 +6,9 @@ class_name ShipProjectile
 
 var active: bool = true
 
+func _ready() -> void:
+	$ProjectileTrail.default_color = modulate
+
 func _physics_process(delta: float) -> void:
 	if !active:
 		return

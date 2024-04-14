@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://rygldequiy7x"]
+[gd_scene load_steps=11 format=3 uid="uid://rygldequiy7x"]
 
 [ext_resource type="PackedScene" uid="uid://bk1dcyxlealda" path="res://Scenes/Player/player.tscn" id="1_sjerm"]
 [ext_resource type="PackedScene" uid="uid://b5md3lc67yau2" path="res://Scenes/GUI/gui.tscn" id="3_55fjw"]
 [ext_resource type="PackedScene" uid="uid://djjoakwp0eej" path="res://Scenes/Enemy/enemy_ship.tscn" id="3_l1yaf"]
+[ext_resource type="PackedScene" uid="uid://ctn2quncvypv5" path="res://Scenes/Tower/enemy_tower.tscn" id="4_fx6js"]
+[ext_resource type="PackedScene" uid="uid://b04so78u7jfp6" path="res://Scenes/Tower/friendly_tower.tscn" id="5_4dpdk"]
 
 [sub_resource type="Environment" id="Environment_fpy8y"]
 background_mode = 3
@@ -37,6 +39,7 @@ width = 400
 zoom = Vector2(0.4, 0.4)
 process_callback = 0
 position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fpy8y")
@@ -724,3 +727,9 @@ position = Vector2(1151, -788)
 
 [node name="EnemyShip2" parent="." instance=ExtResource("3_l1yaf")]
 position = Vector2(-1199, -1026)
+
+[node name="Tower" parent="." instance=ExtResource("4_fx6js")]
+position = Vector2(-71, -3157)
+
+[node name="Tower2" parent="." instance=ExtResource("5_4dpdk")]
+position = Vector2(-141, 535)

@@ -29,15 +29,12 @@ scale_min = 0.1
 scale_max = 0.2
 scale_curve = SubResource("CurveTexture_k8u4u")
 
-[node name="PlayerProjectile" type="Area2D" groups=["projectile"]]
+[node name="ShipProjectile" type="Area2D" groups=["projectile"]]
+top_level = true
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_rfumx")
 damage = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_8w01v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nmvw2")
@@ -47,6 +44,10 @@ top_level = true
 width_curve = SubResource("Curve_gc5fo")
 script = ExtResource("3_ccatv")
 max_length = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_8w01v")
 
 [node name="ExplosionParticles" type="GPUParticles2D" parent="."]
 emitting = false

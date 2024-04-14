@@ -79,7 +79,7 @@ func handle_strafing(delta: float) -> void:
 			right_strafe_particles.emitting = true
 			left_strafe_particles.emitting = false
 		
-		var strafing_vector: Vector2 = Vector2(strafing_input, -0.3).rotated(rotation) * speed * 0.75 * delta
+		var strafing_vector: Vector2 = Vector2(strafing_input, -0.1).rotated(rotation) * speed * 0.75 * delta
 		velocity += strafing_vector
 	else:
 		left_strafe_particles.emitting = false
