@@ -6,6 +6,9 @@ class_name ShipProjectile
 
 var active: bool = true
 
+func _ready() -> void:
+	$ProjectileTrail.default_color = modulate
+
 func _physics_process(delta: float) -> void:
 	if !active:
 		return
@@ -27,3 +30,5 @@ func _on_body_entered(body: Node2D) -> void:
 	destroy_projectile()
 	if body.is_in_group("enemy") or body.is_in_group("friendly"):
 		body.hp -= damage
+		if !(get_parent() is Player) and body.hp <= 0:
+			get_parent().choose_next_target()
