@@ -85,6 +85,7 @@ bus = &"SFX"
 
 [node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ub7ea")
+volume_db = -10.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true

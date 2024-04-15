@@ -24,6 +24,14 @@ class_name EnemyShip
 var enemy_target: Node2D
 var is_dead: bool
 
+func _ready() -> void:
+	# Spawn animation
+	var start_scale: Vector2 = $Sprite2D.scale
+	
+	var tween: Tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property($Sprite2D, "scale", start_scale, 1).from(Vector2(0.1, 0.1))
+
 func _physics_process(delta: float):
 	if is_dead:
 		return
