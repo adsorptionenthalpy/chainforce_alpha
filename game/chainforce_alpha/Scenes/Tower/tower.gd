@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Tower
 
 @export var rotation_speed: float = 5
 @export var hp: int = 100 :

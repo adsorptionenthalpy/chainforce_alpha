@@ -34,10 +34,9 @@ collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_pvjtv")
-speed = 300.0
+speed = 200.0
 rotation_speed = 3.0
-stop_distance = 300.0
-shoot_distance = 500.0
+shoot_distance = 600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1.5, 0.2, 0, 1)
@@ -86,6 +85,10 @@ bus = &"SFX"
 stream = ExtResource("7_ub7ea")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 50.0
+max_speed = 250.0
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="timeout" from="ProjectileShooter/Timer" to="ProjectileShooter" method="_on_timer_timeout"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

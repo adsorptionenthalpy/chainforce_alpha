@@ -30,6 +30,8 @@ func _physics_process(delta: float):
 	
 	chase_target(delta)
 	
+	nav_agent.velocity = velocity
+	
 	move_and_slide()
 
 func chase_target(delta: float):
@@ -46,7 +48,8 @@ func chase_target(delta: float):
 	if nav_agent.distance_to_target() > stop_distance:
 		var direction: Vector2 = nav_agent.get_next_path_position() - global_position
 		direction = direction.normalized()
-		velocity = velocity.lerp(direction * speed, delta * 5)
+		velocity = velocity.lerp(direction * speed * 5, delta)
+		#velocity = velocity.move_toward(direction * speed, delta * 5)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, delta * stop_distance)
 	
@@ -79,12 +82,43 @@ func choose_next_target():
 				next_target = body
 	
 	if next_target == null:
-		enemy_target = null
+		target_closest_tower()
 		projectile_shooter.can_shoot = false
 	else:
 		enemy_target = next_target
 
-func _on_detection_area_body_entered(body: Node2D) -> void:
-	if enemy_target == null and (body.is_in_group("friendly") or body.is_in_group("enemy")):
-		enemy_target = body
+func target_closest_tower():
+	enemy_target = null
+	var towers_arr: Array[Node] = get_tree().get_nodes_in_group("tower")
+	if towers_arr.is_empty():
+		printerr("enemy_ship.gd: Why are there no towers?")
+		return
+	
+	for tower: Node2D in towers_arr:
+		if is_in_group("enemy") and tower.is_in_group("friendly"):
+			set_closest_target(tower)
+		elif is_in_group("friendly") and tower.is_in_group("enemy"):
+			set_closest_target(tower)
 
+func set_closest_target(next_target: Node2D):
+	if enemy_target == null:
+		enemy_target = next_target
+	else:
+		var target_distance: float = global_position.distance_squared_to(enemy_target.global_position)
+		var tower_distance: float = global_position.distance_squared_to(next_target.global_position)
+		if tower_distance < target_distance:
+			enemy_target = next_target
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	# Always focus the player instead of other entities
+	var deselect_current_target: bool = (enemy_target == null or enemy_target is Tower or body is Player)
+	var body_is_targetable: bool = body.is_in_group("friendly") or body.is_in_group("enemy")
+	if deselect_current_target and body_is_targetable:
+		if !(enemy_target is Player):
+			enemy_target = body
+
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	# WARNING: The NavAgent has a max_speed variable that could override the current speed
+	# If it's weirdly moving too slow or too fast, change that.
+	velocity = safe_velocity
