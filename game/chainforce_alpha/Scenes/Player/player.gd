@@ -54,7 +54,9 @@ func _physics_process(delta: float) -> void:
 		
 		if collision.get_collider() is CharacterBody2D: # Hit enemy or such
 			collision.get_collider().velocity = -velocity
-			print(collision.get_collider().velocity)
+		
+		$BumpSFX.pitch_scale = randf_range(1, 1.1)
+		$BumpSFX.play()
 
 func handle_acceleration(delta: float) -> void:
 	var acceleration_input: float = Input.get_axis("accelerate", "decelerate")

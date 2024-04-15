@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://csnmk1ttegadm"]
+
+[ext_resource type="PackedScene" uid="uid://d2hkbk2gop8pt" path="res://Scenes/Base/base.tscn" id="1_x5g5c"]
+
+[node name="EnemyBase" groups=["enemy"] instance=ExtResource("1_x5g5c")]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Polygon2D" parent="." index="0"]
+color = Color(1.5, 0.2, 0, 1)

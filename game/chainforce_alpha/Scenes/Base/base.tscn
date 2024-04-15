@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy_projectile_shooter.gd" id="3_m6f8c"]
 [ext_resource type="PackedScene" uid="uid://bshgq3m3yqxs8" path="res://Scenes/Tower/tower_projectile.tscn" id="4_v2oc3"]
 [ext_resource type="AudioStream" uid="uid://dgqygq2psqrf4" path="res://SFX/LaserPew.wav" id="5_ewtaf"]
+[ext_resource type="AudioStream" uid="uid://r601hvuhtm56" path="res://SFX/Explosion.mp3" id="5_o8etx"]
 [ext_resource type="Texture2D" uid="uid://c3ucu6nuqrjco" path="res://Particles/circle.png" id="6_lt4i3"]
-[ext_resource type="AudioStream" uid="uid://r601hvuhtm56" path="res://SFX/explosion.mp3" id="7_8ix22"]
 
 [sub_resource type="Curve" id="Curve_l8oyy"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -75,7 +75,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_j4pji")
 
 [node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_8ix22")
+stream = ExtResource("5_o8etx")
 pitch_scale = 0.75
 max_distance = 20000.0
 
