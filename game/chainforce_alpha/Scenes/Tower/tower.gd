@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Tower
 
 @export var rotation_speed: float = 5
 @export var hp: int = 100 :
@@ -10,11 +11,19 @@ extends StaticBody2D
 		if hp <= 0:
 			die()
 
+@export var minion_scene: PackedScene
+@export var minion_spawn_count: int = 4
+@export var minion_spawn_delay: float = 1
+
 @onready var projectile_shooter: EnemyProjectileShooter = $ProjectileShooter
 @onready var detection_area: Area2D = $DetectionArea
 
 var enemy_target: Node2D
 var is_dead: bool
+
+func _ready() -> void:
+	await get_tree().process_frame
+	_on_minion_spawn_timeout()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -62,3 +71,10 @@ func choose_next_target():
 		projectile_shooter.can_shoot = false
 	else:
 		enemy_target = next_target
+
+func _on_minion_spawn_timeout() -> void:
+	for i in range(minion_spawn_count):
+		var minion: Node2D = minion_scene.instantiate()
+		minion.global_position = global_position + Vector2(randi_range(-200, 200), randi_range(-200, 200))
+		get_parent().add_sibling(minion)
+		await get_tree().create_timer(minion_spawn_delay).timeout

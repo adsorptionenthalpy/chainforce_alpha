@@ -49,6 +49,9 @@ max_length = 7
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_8w01v")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Sprite2D"]
+rect = Rect2(-100, -100, 200, 200)
+
 [node name="ExplosionParticles" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 15
@@ -56,6 +59,9 @@ process_material = SubResource("ParticleProcessMaterial_1hbrq")
 texture = ExtResource("1_8w01v")
 one_shot = true
 explosiveness = 1.0
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="ExplosionParticles"]
+rect = Rect2(-100, -100, 200, 200)
 
 [node name="LifetimeTimer" type="Timer" parent="."]
 wait_time = 2.0
