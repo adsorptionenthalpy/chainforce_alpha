@@ -27,7 +27,7 @@ scale_max = 0.2
 scale_curve = SubResource("CurveTexture_25v7c")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4kp6"]
-radius = 700.0
+radius = 950.0
 
 [node name="Minion" type="CharacterBody2D" groups=["minion"]]
 collision_layer = 4
