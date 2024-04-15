@@ -34,6 +34,7 @@ collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_pvjtv")
+hp = 15
 speed = 200.0
 rotation_speed = 3.0
 shoot_distance = 600.0
@@ -42,6 +43,8 @@ shoot_distance = 600.0
 modulate = Color(1.5, 0.2, 0, 1)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kfg0x")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Sprite2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -24, 36, 12, 24, 24, 0, 12, -24, 24, -36, 12)
@@ -71,7 +74,6 @@ pitch_scale_min = 1.2
 pitch_scale_max = 1.4
 
 [node name="Timer" type="Timer" parent="ProjectileShooter"]
-wait_time = 0.5
 autostart = true
 
 [node name="ShootSFX" type="AudioStreamPlayer2D" parent="ProjectileShooter"]

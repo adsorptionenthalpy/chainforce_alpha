@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://rygldequiy7x"]
+[gd_scene load_steps=10 format=3 uid="uid://rygldequiy7x"]
 
 [ext_resource type="PackedScene" uid="uid://bk1dcyxlealda" path="res://Scenes/Player/player.tscn" id="1_sjerm"]
 [ext_resource type="PackedScene" uid="uid://b5md3lc67yau2" path="res://Scenes/GUI/gui.tscn" id="3_55fjw"]
-[ext_resource type="PackedScene" uid="uid://djjoakwp0eej" path="res://Scenes/Enemy/enemy_ship.tscn" id="3_l1yaf"]
 [ext_resource type="PackedScene" uid="uid://ctn2quncvypv5" path="res://Scenes/Tower/enemy_tower.tscn" id="4_fx6js"]
 [ext_resource type="PackedScene" uid="uid://b04so78u7jfp6" path="res://Scenes/Tower/friendly_tower.tscn" id="5_4dpdk"]
-[ext_resource type="PackedScene" uid="uid://xxwgiaw3w4hf" path="res://Scenes/Minion/enemy_minion.tscn" id="6_t66da"]
-[ext_resource type="PackedScene" uid="uid://dgbwditesecia" path="res://Scenes/Minion/friendly_minion.tscn" id="7_pplfq"]
 
 [sub_resource type="Environment" id="Environment_fpy8y"]
 background_mode = 3
@@ -36,7 +33,7 @@ width = 400
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
-position = Vector2(5911, -2906)
+position = Vector2(5950, -2210)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.35, 0.35)
@@ -772,72 +769,3 @@ position = Vector2(-5900, -4300)
 
 [node name="EnemyTower7" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
 position = Vector2(0, -3000)
-
-[node name="EnemyShip" parent="." instance=ExtResource("3_l1yaf")]
-position = Vector2(1117, -1059)
-
-[node name="EnemyShip2" parent="." instance=ExtResource("3_l1yaf")]
-position = Vector2(-1233, -1297)
-
-[node name="EnemyMinion" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(5427, -3015)
-speed = 300.0
-stop_distance = 300.0
-shoot_distance = 500.0
-
-[node name="EnemyMinion2" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(6392, -3015)
-speed = 300.0
-stop_distance = 300.0
-shoot_distance = 500.0
-
-[node name="EnemyMinion3" parent="." instance=ExtResource("6_t66da")]
-position = Vector2(5871, -3015)
-speed = 300.0
-stop_distance = 300.0
-shoot_distance = 500.0
-
-[node name="FriendlyMinion6" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5043, -1802)
-speed = 600.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion7" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5941, -1802)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion8" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5470, -1802)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion9" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5313, -2216)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion10" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(6211, -2216)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion11" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5740, -2216)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion12" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(4798, -2018)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion13" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5696, -2018)
-speed = 300.0
-stop_distance = 550.0
-
-[node name="FriendlyMinion14" parent="." instance=ExtResource("7_pplfq")]
-position = Vector2(5225, -2018)
-speed = 300.0
-stop_distance = 550.0

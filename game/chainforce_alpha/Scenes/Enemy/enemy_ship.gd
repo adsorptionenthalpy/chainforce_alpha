@@ -114,7 +114,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	var deselect_current_target: bool = (enemy_target == null or enemy_target is Tower or body is Player)
 	var body_is_targetable: bool = body.is_in_group("friendly") or body.is_in_group("enemy")
 	if deselect_current_target and body_is_targetable:
-		if !(enemy_target is Player):
+		if enemy_target != null and !(enemy_target is Player):
 			enemy_target = body
 
 
