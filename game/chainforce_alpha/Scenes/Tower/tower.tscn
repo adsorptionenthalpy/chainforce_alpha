@@ -44,6 +44,9 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_lcvu4")
 offset = Vector2(26, 0)
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Sprite2D"]
+rect = Rect2(-170, -170, 340, 340)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ykmct")
 
