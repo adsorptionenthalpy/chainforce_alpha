@@ -21,6 +21,8 @@ class_name EnemyShip
 @onready var projectile_shooter: EnemyProjectileShooter = $ProjectileShooter
 @onready var detection_area: Area2D = $DetectionArea
 
+var powerup_scene: PackedScene = preload("res://Scenes/Powerup/powerup.tscn")
+
 var enemy_target: Node2D
 var is_dead: bool
 
@@ -82,6 +84,14 @@ func die():
 	$CollisionPolygon2D.set_deferred("disabled", true)
 	$ProjectileShooter.process_mode = Node.PROCESS_MODE_DISABLED
 	$ExplosionSFX.play()
+	
+	var spawn_powerup: bool = is_in_group("enemy") and randi_range(0, 1) == 1
+	if spawn_powerup:
+		var powerup: Node2D = powerup_scene.instantiate()
+		powerup.global_position = global_position
+		#add_sibling(powerup)
+		call_deferred("add_sibling", powerup)
+	
 	await get_tree().create_timer(2).timeout
 	queue_free()
 
