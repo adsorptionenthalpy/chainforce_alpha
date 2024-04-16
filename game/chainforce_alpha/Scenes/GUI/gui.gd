@@ -19,9 +19,9 @@ func _on_player_hp_changed(new_hp: float):
 		start_respawn_timer()
 
 func start_respawn_timer():
-	%RespawnTimerLabel.visible = true
+	%RespawnTimerPanel.visible = true
 	var wait_time: int = player.get_node("RespawnTimer").wait_time
 	for i in range(wait_time):
 		%RespawnTimerLabel.text = "[center]Respawning in %02d..." % (wait_time - i)
 		await get_tree().create_timer(1).timeout
-	%RespawnTimerLabel.visible = false
+	%RespawnTimerPanel.visible = false

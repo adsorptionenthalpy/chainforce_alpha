@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5md3lc67yau2"]
+[gd_scene load_steps=5 format=3 uid="uid://b5md3lc67yau2"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/gui.gd" id="1_p5gj5"]
 
@@ -26,6 +26,11 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkuaw"]
+bg_color = Color(0.121569, 0.72549, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_p5gj5")
@@ -49,16 +54,33 @@ theme_override_styles/background = SubResource("StyleBoxFlat_l436y")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qsemr")
 value = 100.0
 
-[node name="RespawnTimerLabel" type="RichTextLabel" parent="Control"]
+[node name="RespawnTimerPanel" type="Panel" parent="Control"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -67.0
+offset_left = -275.0
+offset_top = -60.0
+offset_right = 275.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rkuaw")
+
+[node name="RespawnTimerLabel" type="RichTextLabel" parent="Control/RespawnTimerPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Respawning in XX:XX"
