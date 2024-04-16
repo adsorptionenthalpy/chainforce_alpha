@@ -35,7 +35,7 @@ width = 400
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
-position = Vector2(20, -10488)
+position = Vector2(20, -10791)
 hp = 2000
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -781,7 +781,7 @@ position = Vector2(-5900, -4000)
 position = Vector2(0, -3000)
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
-position = Vector2(20, -10488)
+position = Vector2(20, -10791)
 zoom = Vector2(0.35, 0.35)
 process_callback = 0
 position_smoothing_enabled = true
