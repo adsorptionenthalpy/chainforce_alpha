@@ -36,7 +36,6 @@ width = 400
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
 position = Vector2(0, -10001)
-hp = 2000
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

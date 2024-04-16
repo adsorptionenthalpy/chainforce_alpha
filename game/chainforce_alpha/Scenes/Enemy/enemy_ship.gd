@@ -24,7 +24,16 @@ class_name EnemyShip
 var enemy_target: Node2D
 var is_dead: bool
 
+var target_base: Base
+
 func _ready() -> void:
+	# Set target base
+	for base: Base in get_tree().get_nodes_in_group("base"):
+		var target_enemy: bool = base.is_in_group("enemy") and is_in_group("friendly")
+		var target_friendly: bool = base.is_in_group("friendly") and is_in_group("enemy")
+		if target_enemy or target_friendly:
+			target_base = base
+	
 	# Spawn animation
 	var start_scale: Vector2 = $Sprite2D.scale
 	
@@ -77,8 +86,11 @@ func die():
 	queue_free()
 
 func choose_next_target():
-	await get_tree().process_frame
-	await get_tree().process_frame
+	if !detection_area.has_overlapping_bodies():
+		enemy_target = target_base
+		projectile_shooter.can_shoot = false
+		return
+	
 	var next_target: Node2D
 	for body: Node2D in detection_area.get_overlapping_bodies():
 		if next_target == null or next_target.hp <= 0:
@@ -89,16 +101,7 @@ func choose_next_target():
 			if distance_to_body < distance_to_target:
 				next_target = body
 	
-	if next_target == null:
-		# If no target found, go to enemy base
-		for base: Base in get_tree().get_nodes_in_group("base"):
-			var target_enemy: bool = base.is_in_group("enemy") and is_in_group("friendly")
-			var target_friendly: bool = base.is_in_group("friendly") and is_in_group("enemy")
-			if target_enemy or target_friendly:
-				enemy_target = base
-		projectile_shooter.can_shoot = false
-	else:
-		enemy_target = next_target
+	enemy_target = next_target
 
 # NOTE: Not used at the moment, might be useful later.
 #func target_closest_tower():

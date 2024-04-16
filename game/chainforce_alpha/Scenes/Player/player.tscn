@@ -160,4 +160,9 @@ stream = ExtResource("7_m0ptw")
 volume_db = -15.0
 pitch_scale = 1.1
 
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="ProjectileShooter/Timer" to="ProjectileShooter" method="_on_timer_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

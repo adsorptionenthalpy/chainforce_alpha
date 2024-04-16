@@ -23,6 +23,10 @@ signal hp_changed(new_hp: float)
 @onready var explosion_particles: GPUParticles2D = $Particles/ExplosionParticles
 
 var is_dead: bool
+var max_hp: int
+
+func _ready() -> void:
+	max_hp = hp
 
 func _process(delta: float) -> void:
 	if is_dead:
@@ -99,3 +103,16 @@ func die():
 	left_strafe_particles.emitting = false
 	right_strafe_particles.emitting = false
 	$ExplosionSFX.play()
+	
+	$RespawnTimer.start()
+
+
+func _on_respawn_timer_timeout() -> void:
+	is_dead = false
+	hp = max_hp
+	$ProjectileShooter.process_mode = Node.PROCESS_MODE_INHERIT
+	$Sprite2D.visible = true
+	$CollisionPolygon2D.set_deferred("disabled", false)
+	
+	global_position = Vector2.ZERO
+	velocity = Vector2.ZERO

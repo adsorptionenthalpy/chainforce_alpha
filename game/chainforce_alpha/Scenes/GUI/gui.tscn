@@ -48,3 +48,18 @@ offset_bottom = 52.0
 theme_override_styles/background = SubResource("StyleBoxFlat_l436y")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qsemr")
 value = 100.0
+
+[node name="RespawnTimerLabel" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Respawning in XX:XX"
+fit_content = true
