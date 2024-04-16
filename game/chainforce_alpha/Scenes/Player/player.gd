@@ -7,11 +7,12 @@ signal hp_changed(new_hp: float)
 	set(val):
 		hp = val
 		hp_changed.emit(hp)
-		var tween: Tween = create_tween()
-		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		tween.tween_property(self, "modulate", Color.WHITE, 0.5).from(Color(1.3, 1.3, 1.3))
-		if hp <= 0:
-			die()
+		if is_inside_tree():
+			var tween: Tween = create_tween()
+			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			tween.tween_property(self, "modulate", Color.WHITE, 0.5).from(Color(1.3, 1.3, 1.3))
+			if hp <= 0:
+				die()
 
 @export var speed: float = 1000
 @export var max_speed: float = 650

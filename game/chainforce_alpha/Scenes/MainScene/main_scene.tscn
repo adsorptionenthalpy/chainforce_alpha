@@ -35,12 +35,11 @@ width = 400
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
+position = Vector2(20, -10488)
+hp = 2000
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.35, 0.35)
-process_callback = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fpy8y")
@@ -671,7 +670,7 @@ texture = SubResource("GradientTexture1D_obe5s")
 [node name="EnemyBase" parent="NavigationRegion2D/Whole Map/Top Map" instance=ExtResource("4_e1goo")]
 position = Vector2(0, 300)
 scale = Vector2(0.667, 0.667)
-hp = 20
+hp = 100
 
 [node name="Middle Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
 position = Vector2(-30, -40)
@@ -780,3 +779,10 @@ position = Vector2(-5900, -4000)
 
 [node name="EnemyTower7" parent="NavigationRegion2D/Enemy Towers" instance=ExtResource("4_fx6js")]
 position = Vector2(0, -3000)
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+position = Vector2(20, -10488)
+zoom = Vector2(0.35, 0.35)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

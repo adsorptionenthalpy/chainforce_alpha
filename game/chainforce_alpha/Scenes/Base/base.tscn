@@ -27,7 +27,7 @@ scale_curve = SubResource("CurveTexture_rf0vo")
 
 [node name="Base" type="StaticBody2D" groups=["base"]]
 script = ExtResource("1_2heg6")
-hp = 250
+hp = 150
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 scale = Vector2(2, 2)
