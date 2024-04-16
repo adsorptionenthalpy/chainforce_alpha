@@ -85,7 +85,7 @@ func die():
 	$ProjectileShooter.process_mode = Node.PROCESS_MODE_DISABLED
 	$ExplosionSFX.play()
 	
-	var spawn_powerup: bool = is_in_group("enemy") and randi_range(0, 1) == 1
+	var spawn_powerup: bool = is_in_group("enemy") and randi_range(0, 10) == 10
 	if spawn_powerup:
 		var powerup: Node2D = powerup_scene.instantiate()
 		powerup.global_position = global_position
