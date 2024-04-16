@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rygldequiy7x"]
+[gd_scene load_steps=13 format=3 uid="uid://rygldequiy7x"]
 
 [ext_resource type="PackedScene" uid="uid://bk1dcyxlealda" path="res://Scenes/Player/player.tscn" id="1_sjerm"]
 [ext_resource type="PackedScene" uid="uid://b5md3lc67yau2" path="res://Scenes/GUI/gui.tscn" id="3_55fjw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctn2quncvypv5" path="res://Scenes/Tower/enemy_tower.tscn" id="4_fx6js"]
 [ext_resource type="PackedScene" uid="uid://b04so78u7jfp6" path="res://Scenes/Tower/friendly_tower.tscn" id="5_4dpdk"]
 [ext_resource type="PackedScene" uid="uid://cd3uxmj2xapgi" path="res://Scenes/Base/friendly_base.tscn" id="5_sa3yn"]
+[ext_resource type="PackedScene" uid="uid://djjoakwp0eej" path="res://Scenes/Enemy/enemy_ship.tscn" id="7_quxlh"]
 
 [sub_resource type="Environment" id="Environment_fpy8y"]
 background_mode = 3
@@ -35,7 +36,7 @@ width = 400
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sjerm")]
-position = Vector2(20, -10791)
+position = Vector2(20, -10421)
 hp = 2000
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -359,7 +360,7 @@ texture = SubResource("GradientTexture1D_obe5s")
 [node name="FriendlyBase" parent="NavigationRegion2D/Whole Map/Bottom Map" instance=ExtResource("5_sa3yn")]
 position = Vector2(0, 300)
 scale = Vector2(0.667, 0.667)
-hp = 20
+hp = 50
 
 [node name="Top Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
 z_index = 5
@@ -670,7 +671,7 @@ texture = SubResource("GradientTexture1D_obe5s")
 [node name="EnemyBase" parent="NavigationRegion2D/Whole Map/Top Map" instance=ExtResource("4_e1goo")]
 position = Vector2(0, 300)
 scale = Vector2(0.667, 0.667)
-hp = 100
+hp = 20
 
 [node name="Middle Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
 position = Vector2(-30, -40)
@@ -781,8 +782,14 @@ position = Vector2(-5900, -4000)
 position = Vector2(0, -3000)
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
-position = Vector2(20, -10791)
+position = Vector2(20, -10421)
 zoom = Vector2(0.35, 0.35)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="EnemyShip" parent="." instance=ExtResource("7_quxlh")]
+position = Vector2(383, 611)
+
+[node name="EnemyShip2" parent="." instance=ExtResource("7_quxlh")]
+position = Vector2(-259, 645)

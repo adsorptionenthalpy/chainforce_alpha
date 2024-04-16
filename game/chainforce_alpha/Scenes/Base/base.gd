@@ -29,8 +29,9 @@ func die():
 	tween.set_parallel(true)
 	
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(camera, "global_position", global_position, 0.5)
+	tween.tween_property(camera, "global_position", global_position, 1.5)
 	tween.tween_property(camera, "zoom", camera.zoom * 0.75, 5)
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
+	# The animation player sets the size, this warning isn't important.
 	add_child(win_lose_screen.instantiate())
