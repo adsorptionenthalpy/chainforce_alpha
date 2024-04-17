@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctn2quncvypv5" path="res://Scenes/Tower/enemy_tower.tscn" id="4_fx6js"]
 [ext_resource type="PackedScene" uid="uid://b04so78u7jfp6" path="res://Scenes/Tower/friendly_tower.tscn" id="5_4dpdk"]
 [ext_resource type="PackedScene" uid="uid://cd3uxmj2xapgi" path="res://Scenes/Base/friendly_base.tscn" id="5_sa3yn"]
-[ext_resource type="PackedScene" uid="uid://djqk7tqcy47fr" path="res://Scenes/Background/parallax_background.tscn" id="7_cvltt"]
+[ext_resource type="PackedScene" uid="uid://dvkxdisu8cjjv" path="res://Scenes/Powerup/powerup.tscn" id="7_yw6mc"]
 
 [sub_resource type="Environment" id="Environment_fpy8y"]
 background_mode = 3
@@ -669,7 +669,7 @@ texture = SubResource("GradientTexture1D_obe5s")
 [node name="EnemyBase" parent="NavigationRegion2D/Whole Map/Top Map" instance=ExtResource("4_e1goo")]
 position = Vector2(0, 300)
 scale = Vector2(0.667, 0.667)
-hp = 250
+hp = 20
 
 [node name="Middle Map" type="Node2D" parent="NavigationRegion2D/Whole Map"]
 position = Vector2(-30, -40)
@@ -785,4 +785,5 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("7_cvltt")]
+[node name="Powerup" parent="." instance=ExtResource("7_yw6mc")]
+position = Vector2(-25, -226)
