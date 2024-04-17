@@ -67,6 +67,20 @@ text = "QUIT GAME"
 zoom = Vector2(0.3, 0.3)
 script = ExtResource("2_lbvoc")
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center]Prototype created by popcar2"
+fit_content = true
+
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_qco3x")]
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="MainMenu" method="_on_start_button_pressed"]
